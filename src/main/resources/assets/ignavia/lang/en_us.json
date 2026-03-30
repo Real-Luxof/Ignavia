@@ -1,0 +1,5 @@
+{
+    "hexcasting.action.ignavia:inverse": "Aergis' Gambit",
+    "ignavia.entry.inverse_meta": "Opposite Day",
+    "ignavia.page.inverse_meta.inverse_eval.1": "Executes an iota like $(l:patterns/meta#hexcasting:eval)Hermes' Gambit$(), but performs the \"opposite\" of their usual function, whatever that entails."
+}
