@@ -1,6 +1,7 @@
 package com.luxof.ignavia;
 
 import net.fabricmc.api.ModInitializer;
+
 import net.minecraft.util.Identifier;
 
 import org.slf4j.Logger;
@@ -14,6 +15,7 @@ public class Ignavia implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		Patterns.ezilaitini();
+		ReverseActions.curseHex();
 		LOGGER.info("!dlrow cirbaF olleH");
 	}
 
