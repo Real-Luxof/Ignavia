@@ -12,7 +12,7 @@ import com.luxof.ignavia.actions.OpInverseEval;
 import net.minecraft.registry.Registry;
 
 public class Patterns {
-    public static void ezilaitini() {
-        Registry.register(HexActions.REGISTRY, id("inverse_eval"), new ActionRegistryEntry(HexPattern.fromAngles("deaqqeedqa", HexDir.SOUTH_EAST), new OpInverseEval()));
-    }
+    public static ActionRegistryEntry AERGIS = Registry.register(HexActions.REGISTRY, id("inverse_eval"), new ActionRegistryEntry(HexPattern.fromAngles("deaqqeedqa", HexDir.SOUTH_EAST), new OpInverseEval()));
+
+    public static void ezilaitini() {}
 }
