@@ -28,15 +28,13 @@ import at.petrak.hexcasting.common.casting.PatternRegistryManifest;
 import at.petrak.hexcasting.common.lib.hex.HexEvalSounds;
 import at.petrak.hexcasting.xplat.IXplatAbstractions;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Supplier;
-
-import org.jetbrains.annotations.Nullable;
-
 import com.luxof.ignavia.ReverseActions;
 
 import kotlin.Pair;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Supplier;
 
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
@@ -44,6 +42,8 @@ import net.minecraft.nbt.NbtList;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
+
+import org.jetbrains.annotations.Nullable;
 
 public class FrameFuckedEval implements ContinuationFrame {
     private final ArrayList<Iota> instrs;
@@ -58,6 +58,7 @@ public class FrameFuckedEval implements ContinuationFrame {
         return new Pair<>(false, stack.stream().map(iota -> (Iota)iota).toList());
     }
 
+    // :)
     @Override
     public CastResult evaluate(SpellContinuation cont, ServerWorld world, CastingVM vm) {
         if (instrs.isEmpty())

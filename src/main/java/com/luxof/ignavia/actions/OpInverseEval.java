@@ -27,6 +27,7 @@ public class OpInverseEval implements Action {
             throw new MishapNotEnoughArgs(1, 0);
 
         SpellList instrSpellList = OperatorUtils.getList(stack, 0, 1);
+        stack.remove(stack.size() - 1);
 
         SpellContinuation newCont = cont instanceof SpellContinuation.NotDone notDone
             && notDone.getFrame() instanceof FrameFinishEval
@@ -52,5 +53,4 @@ public class OpInverseEval implements Action {
             HexEvalSounds.MISHAP // :)
         );
     }
-    
 }

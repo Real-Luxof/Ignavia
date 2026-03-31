@@ -9,6 +9,7 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
 import at.petrak.hexcasting.api.casting.iota.BooleanIota;
 import at.petrak.hexcasting.api.casting.iota.Iota;
 
+// he's an idjit, but he's MY idjit.
 public class ReverseOpIdjitThatAlwaysSaysYes extends ConstMediaActionNCT {
     public int argc = 0;
     public long mediaCost = 0L;

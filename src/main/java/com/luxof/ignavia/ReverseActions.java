@@ -1,19 +1,19 @@
 package com.luxof.ignavia;
 
-import java.util.HashMap;
-
-import com.luxof.ignavia.reverseactions.ReverseOpIdjitThatAlwaysSaysYes;
-import com.luxof.ignavia.reverseactions.list.*;
-import com.luxof.ignavia.reverseactions.math.ReverseOpCoerceToAxial;
-import com.luxof.ignavia.reverseactions.queryentity.ReverseOpCanEntityHexFly;
-import com.luxof.ignavia.reverseactions.queryentity.ReverseOpEntityHeight;
-import com.luxof.ignavia.reverseactions.selectors.ReverseOpGetCaster;
-
 import at.petrak.hexcasting.api.casting.ActionRegistryEntry;
 import at.petrak.hexcasting.api.casting.castables.Action;
 import at.petrak.hexcasting.common.casting.actions.selectors.OpGetEntitiesBy;
 import at.petrak.hexcasting.common.casting.actions.selectors.OpGetEntityAt;
 import at.petrak.hexcasting.common.lib.hex.HexActions;
+
+import com.luxof.ignavia.reverseactions.*;
+import com.luxof.ignavia.reverseactions.list.*;
+import com.luxof.ignavia.reverseactions.math.*;
+import com.luxof.ignavia.reverseactions.queryentity.*;
+import com.luxof.ignavia.reverseactions.selectors.*;
+import com.luxof.ignavia.reverseactions.stack.*;
+
+import java.util.HashMap;
 
 // can you register stuff at runtime? yeah.
 // should that be stopped? probably.
@@ -155,5 +155,14 @@ public class ReverseActions {
         register(HexActions.GET_ENTITY$ITEM, HexActions.ZONE_ENTITY$NOT_ITEM);
         register(HexActions.GET_ENTITY$PLAYER, HexActions.ZONE_ENTITY$NOT_PLAYER);
         register(HexActions.GET_ENTITY$LIVING, HexActions.ZONE_ENTITY$NOT_LIVING);
+            /// stack
+        register(HexActions.DUPLICATE_N.action(), new ReverseOpDuplicateN());
+        register(HexActions.DUPLICATE.action(), new ReverseOpDuplicate(2));
+        register(HexActions.TWO_DUP.action(), new ReverseOpDuplicate(4));
+        register(HexActions.TUCK, HexActions.OVER);
+        register(HexActions.OVER, HexActions.TUCK);
+        register(HexActions.STACK_LEN.action(), new ReverseOpStackSize());
+        register(HexActions.FISHERMAN.action(), new ReverseOpFisherman());
+            /// spells
     }
 }
