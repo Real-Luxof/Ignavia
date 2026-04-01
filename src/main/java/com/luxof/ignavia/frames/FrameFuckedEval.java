@@ -96,7 +96,7 @@ public class FrameFuckedEval implements ContinuationFrame {
                     cont,
                     img,
                     List.of(),
-                    ResolvedPatternType.ESCAPED,
+                    ResolvedPatternType.EVALUATED, // stop doing stupid shit
                     HexEvalSounds.MISHAP // :)
                 );
 

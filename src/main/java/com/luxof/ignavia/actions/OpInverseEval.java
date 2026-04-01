@@ -26,7 +26,7 @@ public class OpInverseEval implements Action {
         if (stack.size() == 0)
             throw new MishapNotEnoughArgs(1, 0);
 
-        SpellList instrSpellList = OperatorUtils.getList(stack, 0, 1);
+        SpellList instrSpellList = OperatorUtils.getList(stack, stack.size() - 1, 0);
         stack.remove(stack.size() - 1);
 
         SpellContinuation newCont = cont instanceof SpellContinuation.NotDone notDone
