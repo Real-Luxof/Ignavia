@@ -170,6 +170,7 @@ public class ReverseActions {
         register(HexActions.ADD_MOTION.action(), new ReverseOpAddMotion());
         register(HexActions.BLINK.action(), new ReverseOpBlink());
         register(HexActions.BREAK_BLOCK.action(), new ReverseOpBreakBlock());
+        register(HexActions.EXPLODE$FIRE.action(), new ReverseOpFireball());
         register(HexActions.BEEP.action(), new ReverseOpBeep());
     }
 }
