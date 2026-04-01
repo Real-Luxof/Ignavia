@@ -22,6 +22,7 @@ import org.jetbrains.annotations.Nullable;
 public class IgnaviaPersistentState extends PersistentState {
     // surely this won't have any performance implications :clueless:
     public HashMap<Identifier, HashMap<BlockPos, BlockState>> exploded;
+    public boolean inDesperateNeedOfYuriComics = false;
 
     // oh god
     private <E extends Enum<E> & StringIdentifiable> EnumProperty<E> evil(
@@ -77,8 +78,11 @@ public class IgnaviaPersistentState extends PersistentState {
         return exploded;
     }
 
-    public IgnaviaPersistentState(NbtCompound nbt) {
+    public IgnaviaPersistentState() {
         exploded = new HashMap<>();
+    }
+    public IgnaviaPersistentState(NbtCompound nbt) {
+        this();
 
         nbt.getKeys().forEach(
             key -> exploded.put(new Identifier(key), readDimension(nbt.getCompound(key)))
@@ -144,8 +148,8 @@ public class IgnaviaPersistentState extends PersistentState {
     }
 
     public static IgnaviaPersistentState get(ServerWorld world) {
-        
-        return world.getServer().getOverworld().getPersistentStateManager().get(
+        return world.getServer().getOverworld().getPersistentStateManager().getOrCreate(
+            IgnaviaPersistentState::new,
             IgnaviaPersistentState::new,
             "ignavia_explosions"
         );
@@ -153,10 +157,25 @@ public class IgnaviaPersistentState extends PersistentState {
 
     @Nullable
     public BlockState popExploded(ServerWorld world, BlockPos pos) {
-        return exploded.get(world.getDimensionKey().getValue()).remove(pos);
+        var dimension = exploded.get(world.getDimensionKey().getValue());
+        if (dimension == null) return null;
+        inDesperateNeedOfYuriComics = true;
+        return dimension.remove(pos);
+    }
+
+    @Nullable
+    public BlockState peepExploded(ServerWorld world, BlockPos pos) {
+        var dimension = exploded.get(world.getDimensionKey().getValue());
+        if (dimension == null) return null;
+        return dimension.get(pos);
     }
 
     public void set(ServerWorld world, BlockPos pos, BlockState state) {
-        
+        Identifier id = world.getDimensionKey().getValue();
+        if (!exploded.containsKey(id))
+            exploded.put(id, new HashMap<>());
+        var dimension = exploded.get(id);
+        dimension.put(pos, state);
+        inDesperateNeedOfYuriComics = true;
     }
 }

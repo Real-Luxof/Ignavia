@@ -11,7 +11,7 @@ import com.luxof.ignavia.reverseactions.list.*;
 import com.luxof.ignavia.reverseactions.math.*;
 import com.luxof.ignavia.reverseactions.queryentity.*;
 import com.luxof.ignavia.reverseactions.selectors.*;
-import com.luxof.ignavia.reverseactions.spells.ReverseOpExplode;
+import com.luxof.ignavia.reverseactions.spells.*;
 import com.luxof.ignavia.reverseactions.stack.*;
 
 import java.util.HashMap;
@@ -167,6 +167,8 @@ public class ReverseActions {
             /// spells
         register(HexActions.EXPLODE.action(), new ReverseOpExplode());
         // fireball
-        register(HexActions.ADD_MOTION, HexActions.BLINK);
+        register(HexActions.ADD_MOTION.action(), new ReverseOpAddMotion());
+        register(HexActions.BLINK.action(), new ReverseOpBlink());
+        register(HexActions.BREAK_BLOCK.action(), new ReverseOpBreakBlock());
     }
 }

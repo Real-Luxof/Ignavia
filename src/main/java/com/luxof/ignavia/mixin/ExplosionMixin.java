@@ -1,6 +1,7 @@
 package com.luxof.ignavia.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
+
 import com.luxof.ignavia.IgnaviaPersistentState;
 import com.luxof.ignavia.minterfaces.ExplosionMinterface;
 
@@ -12,7 +13,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
 
-import org.spongepowered.asm.mixin.Debug;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -21,7 +21,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
-@Debug(export = true)
 @Mixin(Explosion.class)
 public class ExplosionMixin implements ExplosionMinterface {
 

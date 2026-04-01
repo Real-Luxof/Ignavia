@@ -2,7 +2,12 @@
 	"required": true,
 	"package": "com.luxof.ignavia.mixin",
 	"compatibilityLevel": "JAVA_17",
-	"mixins": [],
+	"mixins": [
+		"ExplosionMixin",
+		"MinecraftServerMixin",
+		"OpBreakBlock$SpellMixin",
+		"OverrideCastersMixin"
+	],
 	"injectors": {
 		"defaultRequire": 1
 	},
