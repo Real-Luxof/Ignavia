@@ -6,7 +6,10 @@
 		"ExplosionMixin",
 		"MinecraftServerMixin",
 		"OpBreakBlock$SpellMixin",
-		"OverrideCastersMixin"
+		"OverrideCastersMixin",
+		"FabricXplatImplMixin",
+		"ClientWorldMixin",
+		"MinecraftClientMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -16,6 +16,9 @@
 	"entrypoints": {
 		"main": [
 			"com.luxof.ignavia.Ignavia"
+		],
+		"client": [
+			"com.luxof.ignavia.client.IgnaviaClient"
 		]
 	},
 	"mixins": [
