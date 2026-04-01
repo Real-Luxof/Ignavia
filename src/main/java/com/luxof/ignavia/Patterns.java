@@ -5,9 +5,9 @@ import at.petrak.hexcasting.api.casting.math.HexDir;
 import at.petrak.hexcasting.api.casting.math.HexPattern;
 import at.petrak.hexcasting.common.lib.hex.HexActions;
 
-import static com.luxof.ignavia.Ignavia.id;
-
 import com.luxof.ignavia.actions.OpInverseEval;
+
+import static com.luxof.ignavia.Ignavia.id;
 
 import net.minecraft.registry.Registry;
 
